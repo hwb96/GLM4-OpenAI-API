@@ -15,6 +15,8 @@ OpenAI最初引入了`function_call`和`functions`参数来支持函数调用。
 
 ## 本项目特点
 
+在接入Didy等应用开发平台时,发现官方的`openai_api_server.py`在function call时如果是非Stream function calling,也就是非流式输出调用工具时,会正常输出，但是当选择Stream function calling时，输出为空,所以对此进行了优化。
+
 本项目基于智谱AI公司发布的GLM4模型，成功实现了`tool_choice`功能的适配和优化。主要特点包括：
 
 1. 支持OpenAI Tool Calling API规范。

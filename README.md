@@ -20,7 +20,7 @@ OpenAI最初引入了`function_call`和`functions`参数来支持函数调用。
 本项目基于智谱AI公司发布的GLM4模型，成功实现了`tool_choice`功能的适配和优化。主要特点包括：
 
 1. 支持OpenAI Tool Calling API规范。
-2. 解决了官方`openai_api_server.py`在function call时的常见问题。
+2. 解决了官方`openai_api_server.py`在接入Didy等应用开发平台时function call不能正常调用的问题。
 3. 经过测试，包括：
    - 本地环境测试
    - 在Dify等主流AI工作流平台上的集成测试

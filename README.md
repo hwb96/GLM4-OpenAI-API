@@ -1,5 +1,3 @@
-# 仓库名称
-
 ## 背景介绍
 
 OpenAI的API提供了强大的工具调用功能，允许模型与外部函数或工具进行交互。这个功能最初被称为Function Calling，后来演变为更灵活的Tool Calling。

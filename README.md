@@ -1,4 +1,4 @@
-# 项目名称
+# 仓库名称
 
 ## 背景介绍
 
@@ -13,7 +13,7 @@ OpenAI最初引入了`function_call`和`functions`参数来支持函数调用。
 
 这一变化使得API能够支持更广泛的工具类型。
 
-## 本项目特点
+## 本仓库特点
 
 在接入Didy等应用开发平台时,发现官方的`openai_api_server.py`在function call时如果是非Stream function calling,也就是非流式输出调用工具时,会正常输出，但是当选择Stream function calling时，输出为空,所以对此进行了优化。
 

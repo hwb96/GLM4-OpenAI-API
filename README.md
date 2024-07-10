@@ -61,3 +61,4 @@ python openai_api_server.py
 ## 参考
 
 1. [GLM-4/basic_demo/openai_api_server.py at main · THUDM/GLM-4 (github.com)](https://github.com/THUDM/GLM-4/blob/main/basic_demo/openai_api_server.py)
+2. https://github.com/THUDM/GLM-4

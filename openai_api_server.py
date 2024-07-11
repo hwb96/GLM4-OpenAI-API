@@ -494,36 +494,14 @@ async def predict_stream(model_id, gen_params):
             '''
             if not is_function_call and len(lines) >= 2 and "}" in lines[1]:
                 first_line = lines[0].strip()
-                pattern = r'[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]'
-                match = re.search(pattern, first_line)
-                if match:
-                    first_line = match.group()
-                print('最终first_line', first_line)
-                if first_line in tools:
-                    is_function_call = True
-                    function_name = first_line
-                    print('569,function_name', function_name)
+                for tool in tools:
+                    if tool in first_line:
+                        function_name = tool
+                        is_function_call = True
 
             # 工具调用返回原始代码
             if is_function_call:
-                print('568is_function_call')
-                print('初始function_name', function_name)
-
-                # 方法1：正则匹配
-                # pattern = r'[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]'
-                # match = re.search(pattern, function_name)
-                # if match:
-                #     function_name = match.group()
-
-                # 方法2: 与tools进行对比, 匹配出最终的toolname
-                for tool in tools:
-                    if tool in function_name:
-                        function_name = tool
-                        break
-
                 arguments = lines[1].rsplit('}', 1)[0] + '}'
-                print('arguments', arguments)
-
                 function_call = {"name": function_name, "arguments": arguments}
                 if not has_send_first_chunk:
                     print('570has_send_first_chunk')
